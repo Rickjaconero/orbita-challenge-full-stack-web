@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/WeatherForecast/name": {
+    "/Students/name": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Students"
         ],
         "responses": {
           "200": {

@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "StudenstAPI.Controllers.WeatherForecastController",
-    "Method": "GetVeiculoPorRenavam",
-    "RelativePath": "WeatherForecast/name",
+    "ContainingType": "StudenstAPI.Controllers.StudentsController",
+    "Method": "GetAsync",
+    "RelativePath": "Students/name",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

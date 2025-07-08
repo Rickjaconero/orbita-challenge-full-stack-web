@@ -5,6 +5,7 @@ namespace StudentsAPI.Data.Abstractions
 {
     public interface IApplicationContext
     {
-        public DbSet<Student> Students { get; set; }
+        DbSet<Student> Students { get; set; }
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }
