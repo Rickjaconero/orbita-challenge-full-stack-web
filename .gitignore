@@ -482,3 +482,12 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+/StudenstAPI/obj/Debug/net8.0/apphost.exe
+/StudenstAPI/obj/Debug/net8.0/StudentsAPI.assets.cache
+/StudenstAPI/obj/Debug/net8.0/StudentsAPI.csproj.FileListAbsolute.txt
+/StudentsAPI.Data/obj/Debug/net8.0/StudentsAPI.Data.assets.cache
+/StudentsAPI.Data/obj/Debug/net8.0/StudentsAPI.Data.csproj.FileListAbsolute.txt
+/StudentsAPI.Data.Abstractions/obj/Debug/net8.0/StudentsAPI.Data.Abstractions.assets.cache
+/StudentsAPI.Data.Abstractions/obj/Debug/net8.0/StudentsAPI.Data.Abstractions.csproj.FileListAbsolute.txt
+/StudentsAPI.Domain/obj/Debug/net8.0/StudentsAPI.Domain.assets.cache
+/StudentsAPI.Domain/obj/Debug/net8.0/StudentsAPI.Domain.csproj.FileListAbsolute.txt
