@@ -15,33 +15,42 @@ namespace StudentsAPI.Service.Service
             _studentsRepository = studentsRepository;
         }
 
-        public async Task<IEnumerable<StudentGetResponse>> GetAllAsync()
+        public async Task<IEnumerable<StudentGetResponse>> GetAsync()
         {
-            var students = await _studentsRepository.GetAllAsync();
+            var students = await _studentsRepository.GetAsync();
 
             var studentsGetResponse = students.Select(x => new StudentGetResponse(x));
 
             return studentsGetResponse;
         }
 
-        public async Task<Student> GetByAcademicRegistry(
+        public async Task<StudentGetResponse> GetByAcademicRegistryAsync(
             Guid academicRegistry)
         {
-            return await _studentsRepository.GetByAcademicRegistry(academicRegistry);
+            var student = await _studentsRepository
+                .GetByAcademicRegistryAsync(academicRegistry);
+
+            var studentGetResponse = new StudentGetResponse(student);
+
+            return studentGetResponse;
         }
 
-        public async Task<IEnumerable<Student>> GetByNameAsync(string name)
+        public async Task<IEnumerable<StudentGetResponse>> GetByNameAsync(string name)
         {
             if (string.IsNullOrEmpty(name))
                 throw new ArgumentNullException(nameof(name));
 
-            return await _studentsRepository.GetByNameAsync(name);
+            var students = await _studentsRepository.GetByNameAsync(name);
+
+            var studentsGetResponse = students.Select(x => new StudentGetResponse(x));
+
+            return studentsGetResponse;
         }
 
         public async Task AddAsync(StudentPostRequest studentPostRequest)
         {
             var isCpfAlreadyRegistered = await _studentsRepository
-                .IsCpfAlreadyRegistered(studentPostRequest.Cpf);
+                .IsCpfAlreadyRegisteredAsync(studentPostRequest.Cpf);
 
             if (isCpfAlreadyRegistered)
                 throw new ArgumentException(nameof(studentPostRequest.Cpf));
@@ -59,23 +68,22 @@ namespace StudentsAPI.Service.Service
 
         public async Task EditAsync(
             Guid academicRegistry,
-            string name,
-            string email)
+            StudentPutRequest studentPutRequest)
         {
-            var student = await _studentsRepository.GetByAcademicRegistry(academicRegistry);
+            var student = await _studentsRepository.GetByAcademicRegistryAsync(academicRegistry);
 
             if (student is null)
                 throw new ArgumentNullException(nameof(student));
 
-            student.Name = name;
-            student.Email = email;
+            student.Name = studentPutRequest.Name;
+            student.Email = studentPutRequest.Email;
 
             await _studentsRepository.SaveChangesAsync();
         }
 
         public async Task RemoveAsync(Guid academicRegistry)
         {
-            var student = await _studentsRepository.GetByAcademicRegistry(academicRegistry);
+            var student = await _studentsRepository.GetByAcademicRegistryAsync(academicRegistry);
 
             if (student is null)
                 throw new ArgumentNullException(nameof(student));

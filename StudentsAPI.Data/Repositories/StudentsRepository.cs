@@ -14,17 +14,16 @@ namespace StudentsAPI.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Student>> GetAllAsync()
+        public async Task<IEnumerable<Student>> GetAsync()
         {
             return await _context.Students
                 .AsNoTracking()
                 .ToListAsync();
         }
 
-        public async Task<Student> GetByAcademicRegistry(Guid academicRegistry)
+        public async Task<Student> GetByAcademicRegistryAsync(Guid academicRegistry)
         {
             var student = await _context.Students
-                .AsNoTracking()
                 .SingleAsync(x => x.AcademicRegistry == academicRegistry);
 
             return student;
@@ -34,12 +33,12 @@ namespace StudentsAPI.Data.Repositories
         {
             var students = _context.Students
                 .AsNoTracking()
-                .Where(x => x.Name.Contains(name));
+                .Where(x => x.Name.ToUpper().Contains(name.ToUpper()));
 
             return await students.ToListAsync();
         }
 
-        public async Task<bool> IsCpfAlreadyRegistered(string cpf)
+        public async Task<bool> IsCpfAlreadyRegisteredAsync(string cpf)
         {
             return await _context.Students
                 .AsNoTracking()
