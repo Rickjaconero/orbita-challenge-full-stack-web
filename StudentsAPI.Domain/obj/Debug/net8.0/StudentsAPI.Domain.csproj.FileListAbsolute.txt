@@ -1,0 +1,12 @@
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\bin\Debug\net8.0\StudentsAPI.Domain.deps.json
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\bin\Debug\net8.0\StudentsAPI.Domain.dll
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\bin\Debug\net8.0\StudentsAPI.Domain.pdb
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\obj\Debug\net8.0\StudentsAPI.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\obj\Debug\net8.0\StudentsAPI.Domain.AssemblyInfoInputs.cache
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\obj\Debug\net8.0\StudentsAPI.Domain.AssemblyInfo.cs
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\obj\Debug\net8.0\StudentsAPI.Domain.csproj.CoreCompileInputs.cache
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\obj\Debug\net8.0\StudentsAPI.Domain.sourcelink.json
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\obj\Debug\net8.0\StudentsAPI.Domain.dll
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\obj\Debug\net8.0\refint\StudentsAPI.Domain.dll
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\obj\Debug\net8.0\StudentsAPI.Domain.pdb
+C:\Users\rfagu\Documents\Repositories\orbita-challenge-full-stack-web\StudentsAPI.Domain\obj\Debug\net8.0\ref\StudentsAPI.Domain.dll

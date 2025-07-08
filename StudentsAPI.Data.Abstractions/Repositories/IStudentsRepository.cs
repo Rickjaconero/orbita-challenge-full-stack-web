@@ -7,8 +7,9 @@ namespace StudentsAPI.Data.Abstractions.Repositories
         Task<IEnumerable<Student>> GetAllAsync();
         Task<Student> GetByAcademicRegistry(Guid academicRegistry);
         Task<IEnumerable<Student>> GetByNameAsync(string name);
+        Task<bool> IsCpfAlreadyRegistered(string cpf);
         Task AddAsync(Student student);
-        Task RemoveAsync(Student student);
+        void Remove(Student student);
         Task SaveChangesAsync();
     }
 }

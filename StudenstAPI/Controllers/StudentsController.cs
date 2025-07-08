@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using StudentsAPI.Data.Abstractions.Repositories;
-using StudentsAPI.Domain.Entities;
+using StudentsAPI.Application.Abstractions.Services;
 
 namespace StudenstAPI.Controllers
 {
@@ -8,39 +7,22 @@ namespace StudenstAPI.Controllers
     [Route("[controller]")]
     public class StudentsController : Controller
     {
-        private readonly IStudentsRepository _studentsRepository;
+        private readonly IStudentsService _studentsService;
 
-        public StudentsController(IStudentsRepository studentsRepository)
+        public StudentsController(IStudentsService studentsService)
         {
-            _studentsRepository = studentsRepository;
+            _studentsService = studentsService;
         }
 
         [HttpGet]
-        [Route("name")]
+        [Route("")]
         public async Task<IActionResult> GetAsync()
         {
             try
             {
-                var students = await _studentsRepository.GetAllAsync();
+                var students = await _studentsService.GetAllAsync();
 
-                var student = await _studentsRepository.GetByNameAsync("lice");
-
-                var guidStudent = await _studentsRepository.GetByAcademicRegistry(new Guid("f409eb32-d85f-416d-afdc-2dc6b5754d85"));
-
-                if (guidStudent is not null)
-                    await _studentsRepository.RemoveAsync(guidStudent);
-
-                var newStudent = new Student(
-                    new Guid(),
-                    "Bruna Santos",
-                    "bruna.santos@example.com",
-                    "11111111111");
-
-                await _studentsRepository.AddAsync(newStudent);
-
-                await _studentsRepository.SaveChangesAsync();
-
-                return Ok(student);
+                return Ok(students);
             }
             catch (Exception e)
             {

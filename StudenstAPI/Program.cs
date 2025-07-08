@@ -1,4 +1,5 @@
 using StudentsAPI.Data.Extensions;
+using StudentsAPI.Application.Extensions;
 
 internal class Program
 {
@@ -7,6 +8,7 @@ internal class Program
         var builder = WebApplication.CreateBuilder();
 
         builder.Services.ResolveDataDependencies();
+        builder.Services.ResolveApplicationDependencies();
 
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();

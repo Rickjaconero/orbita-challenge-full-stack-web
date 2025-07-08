@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StudentsAPI.Application.Abstractions\StudentsAPI.Application.Abstractions.csproj" />
+    <ProjectReference Include="..\StudentsAPI.Application\StudentsAPI.Application.csproj" />
     <ProjectReference Include="..\StudentsAPI.Data\StudentsAPI.Data.csproj" />
   </ItemGroup>
 

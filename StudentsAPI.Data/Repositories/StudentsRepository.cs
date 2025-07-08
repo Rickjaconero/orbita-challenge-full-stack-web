@@ -16,7 +16,9 @@ namespace StudentsAPI.Data.Repositories
 
         public async Task<IEnumerable<Student>> GetAllAsync()
         {
-            return await _context.Students.AsNoTracking().ToListAsync();
+            return await _context.Students
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         public async Task<Student> GetByAcademicRegistry(Guid academicRegistry)
@@ -37,18 +39,21 @@ namespace StudentsAPI.Data.Repositories
             return await students.ToListAsync();
         }
 
+        public async Task<bool> IsCpfAlreadyRegistered(string cpf)
+        {
+            return await _context.Students
+                .AsNoTracking()
+                .AnyAsync(x=> x.Cpf == cpf);
+        }
+
         public async Task AddAsync(Student student)
         {
             await _context.Students.AddAsync(student);
-
-            await _context.SaveChangesAsync();
         }
 
-        public async Task RemoveAsync(Student student)
+        public void Remove(Student student)
         {
             _context.Students.Remove(student);
-
-            await _context.SaveChangesAsync();
         }
 
         public async Task SaveChangesAsync()
