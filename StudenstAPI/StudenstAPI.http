@@ -1,0 +1,6 @@
+@StudenstAPI_HostAddress = http://localhost:5083
+
+GET {{StudenstAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
