@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "StudenstAPI.Controllers.WeatherForecastController",
+    "Method": "GetVeiculoPorRenavam",
+    "RelativePath": "WeatherForecast/name",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
