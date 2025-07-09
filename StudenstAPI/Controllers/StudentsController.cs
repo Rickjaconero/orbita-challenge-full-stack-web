@@ -17,7 +17,7 @@ namespace StudenstAPI.Controllers
 
         [HttpGet]
         [Route("")]
-        public async Task<IActionResult> GetAsync([FromQuery] string name)
+        public async Task<IActionResult> GetAsync([FromQuery] string? name)
         {
             try
             {
